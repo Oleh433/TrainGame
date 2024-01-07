@@ -2,14 +2,19 @@ namespace TrainGame
 {
     public partial class Form1 : Form
     {
-        Train train;
-        Switch switch1 = new Switch();
-        Switch switch2 = new Switch();
+        internal Train train;
+        public Switch switch1;
+        public Switch switch2;
 
         public Form1()
         {
             InitializeComponent();
             train = new Train(pictureBox1);
+            train.HideDrawingBackground();
+            train.DrawBlack();
+
+            switch1 = new Switch(300, 325);
+            switch2 = new Switch(460, 165);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -17,27 +22,35 @@ namespace TrainGame
 
         }
 
-        private void PerformAnimation(Train tr)
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                tr.DrawBlack();
-                if (train.x > 300 && train.y <= 325)
-                {
-                    tr.MoveRightNUp(2);
-                }
-                else
-                {
-                    tr.MoveRight(2);
-                }
-                Thread.Sleep(100);
-                tr.HideDrawingBackground();
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            PerformAnimation(train);
+            train.SwitchEngineState(switch1, switch2);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            train.ChangeMovingDirection();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            switch1.SwitchState = "right";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            switch1.SwitchState = "left";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            switch2.SwitchState = "left";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            switch2.SwitchState = "right";
         }
     }
 }
