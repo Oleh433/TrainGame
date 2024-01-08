@@ -174,7 +174,7 @@ namespace TrainGame.TrainParts
             {
                 game.EndGame();
             }
-            else if (X == 700 && Y == 325)
+            else if (X == 650 && Y == 325)
             {
                 game.EndGame();
             }
@@ -182,9 +182,13 @@ namespace TrainGame.TrainParts
             {
                 game.EndGame();
             }
-            else if (X == 900 && Y == 165)
+            else if (X == 800 && Y == 165)
             {
                 game.EndGame();
+            }
+            else if (wagon.IsActive && X > 500 & X < 600 && Y == 165 )
+            {
+
             }
         }
     }
