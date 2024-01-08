@@ -9,7 +9,7 @@ namespace TrainGame.TrainParts
     public class Wagon : MovingObjects
     {
         public const string WagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Wagon.png";
-        public const string RotatedWagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\RotatedTrain.jpg";
+        public const string RotatedWagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\RotatedWagon1.png";
 
         public Wagon(PictureBox pictureBox) : base(pictureBox, 100, 165, Image.FromFile(WagonImagePath), Image.FromFile(RotatedWagonImagePath))
         {
