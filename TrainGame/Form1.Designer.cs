@@ -54,7 +54,7 @@
             button1.Name = "button1";
             button1.Size = new Size(136, 56);
             button1.TabIndex = 1;
-            button1.Text = "Start engine";
+            button1.Text = "Engine on/of";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
