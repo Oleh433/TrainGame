@@ -11,10 +11,16 @@ namespace TrainGame
     {
         public bool GameState = true;
 
-        public void EndGame()
+        public void LooseGame()
         {
             GameState = false;
             MessageBox.Show("Game Over", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void WinGame()
+        {
+            GameState = false;
+            MessageBox.Show("You win!", "You win!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

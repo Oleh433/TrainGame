@@ -23,8 +23,8 @@ namespace TrainGame.TrainParts
 
         public PathHandler? pathHandler;
 
-        protected PictureBox _pictureBox;
-        protected Graphics _graphics;
+        public PictureBox _pictureBox;
+        public Graphics _graphics;
 
         public MovingObjects(PictureBox pictureBox, int x, int y, Image objectImage, Image rotatedObjectImage)
         {
@@ -135,7 +135,7 @@ namespace TrainGame.TrainParts
             }
             else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "right" && pathHandler == MoveRightNUp)
             {
-                game.EndGame();
+                game.LooseGame();
             }
             else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "right" && pathHandler == MoveRight)
             {
@@ -143,17 +143,17 @@ namespace TrainGame.TrainParts
             }
             else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "left" && pathHandler == MoveRight)
             {
-                game.EndGame();
+                game.LooseGame();
             }
 
 
             else if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "left" && pathHandler == MoveLeft)
             {
-                game.EndGame();
+                game.LooseGame();
             }
             else if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "right" && pathHandler == MoveLeftNDown)
             {
-                game.EndGame();
+                game.LooseGame();
             }
             else if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "left" && pathHandler == MoveLeftNDown)
             {
@@ -172,23 +172,23 @@ namespace TrainGame.TrainParts
             }
             else if (X == 50 && Y == 165)
             {
-                game.EndGame();
+                game.LooseGame();
             }
             else if (X == 650 && Y == 325)
             {
-                game.EndGame();
+                game.LooseGame();
             }
             else if (X == 50 && Y == 325)
             {
-                game.EndGame();
+                game.LooseGame();
             }
-            else if (X == 800 && Y == 165)
+            else if (X == 760 && Y == 165)
             {
-                game.EndGame();
+                game.LooseGame();
             }
-            else if (wagon.IsActive && X > 500 & X < 600 && Y == 165 )
+            else if (wagon.IsActive && X > 620 & X < 720 && Y == 165 && IsActive == false )
             {
-
+                game.WinGame();
             }
         }
     }

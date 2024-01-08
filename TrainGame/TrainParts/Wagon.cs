@@ -16,6 +16,5 @@ namespace TrainGame.TrainParts
             pathHandler = MoveLeft;
         }
 
-
     }
 }

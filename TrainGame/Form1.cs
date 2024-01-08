@@ -23,8 +23,8 @@ namespace TrainGame
 
             train.DrawBlack(train.CurrentObjectImage);
 
-            switch1 = new Switch(300, 325);
-            switch2 = new Switch(460, 165);
+            switch1 = new Switch(300, 325, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Left.png"));
+            switch2 = new Switch(460, 165, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch2Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch2Left.png"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -84,6 +84,9 @@ namespace TrainGame
         {
             while (train.IsActive && game.GameState)
             {
+                switch1.DrawBlack(train._pictureBox, 315, 319);
+                switch2.DrawBlack(train._pictureBox, 462, 162); 
+
                 train.DrawBlack(train.CurrentObjectImage);
                 wagon.DrawBlack(wagon.CurrentObjectImage);
 
@@ -106,6 +109,9 @@ namespace TrainGame
                 }
 
             }
+
+            switch1.DrawBlack(train._pictureBox, 315, 319);
+            switch2.DrawBlack(train._pictureBox, 462, 162);
 
             train.DrawBlack(train.CurrentObjectImage);
             wagon.DrawBlack(wagon.CurrentObjectImage);
