@@ -98,6 +98,13 @@ namespace TrainGame
                 train.HideDrawingBackground();
 
                 train.LookForCheckpoints(switch1, switch2, wagon, game);
+                wagon.LookForCheckpoints(switch1, switch2, wagon, game);
+
+                if (train.X == 152 && train.Y == 165)
+                {
+                    wagon.IsActive = true;
+                }
+
             }
 
             train.DrawBlack(train.CurrentObjectImage);

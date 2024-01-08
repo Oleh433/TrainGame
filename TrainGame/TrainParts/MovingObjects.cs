@@ -70,7 +70,7 @@ namespace TrainGame.TrainParts
         {
             Graphics g = _pictureBox.CreateGraphics();
 
-            using (Image im = Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\roaddd.png"))
+            using (Image im = Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\roaddd1.png"))
             {
                 g.DrawImage(im, 0, 0);
             }
@@ -170,14 +170,21 @@ namespace TrainGame.TrainParts
             {
                 pathHandler = MoveLeft;
             }
-            else if (X == 120 && Y == 165)
+            else if (X == 50 && Y == 165)
             {
-
-                if (!wagon.IsActive)
-                {
-                    wagon.IsActive = true;
-                    wagon.pathHandler = MoveLeft;
-                }
+                game.EndGame();
+            }
+            else if (X == 700 && Y == 325)
+            {
+                game.EndGame();
+            }
+            else if (X == 50 && Y == 325)
+            {
+                game.EndGame();
+            }
+            else if (X == 900 && Y == 165)
+            {
+                game.EndGame();
             }
         }
     }

@@ -13,6 +13,7 @@ namespace TrainGame.TrainParts
 
         public Wagon(PictureBox pictureBox) : base(pictureBox, 100, 165, Image.FromFile(WagonImagePath), Image.FromFile(RotatedWagonImagePath))
         {
+            pathHandler = MoveLeft;
         }
 
 
