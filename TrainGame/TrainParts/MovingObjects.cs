@@ -59,7 +59,7 @@ namespace TrainGame.TrainParts
             }
         }
 
-        public void DrawBlack(Image im)
+        public void DrawObject(Image im)
         {
             Graphics g = _pictureBox.CreateGraphics();
 
@@ -186,7 +186,7 @@ namespace TrainGame.TrainParts
             {
                 game.LooseGame();
             }
-            else if (wagon.IsActive && X > 620 & X < 720 && Y == 165 && IsActive == false )
+            else if (wagon.IsActive && X > 630 & X < 700 && Y == 165 && IsActive == false )
             {
                 game.WinGame();
             }

@@ -21,7 +21,7 @@ namespace TrainGame
             train.HideDrawingBackground();
             wagon.HideDrawingBackground();
 
-            train.DrawBlack(train.CurrentObjectImage);
+            train.DrawObject(train.CurrentObjectImage);
 
             switch1 = new Switch(300, 325, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Left.png"));
             switch2 = new Switch(460, 165, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch2Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch2Left.png"));
@@ -84,11 +84,16 @@ namespace TrainGame
         {
             while (train.IsActive && game.GameState)
             {
-                switch1.DrawBlack(train._pictureBox, 315, 319);
-                switch2.DrawBlack(train._pictureBox, 462, 162); 
+                
 
-                train.DrawBlack(train.CurrentObjectImage);
-                wagon.DrawBlack(wagon.CurrentObjectImage);
+                Thread.Sleep(50);
+                train.HideDrawingBackground();
+
+                switch1.DrawObject(train._pictureBox, 315, 319);
+                switch2.DrawObject(train._pictureBox, 462, 162);
+
+                train.DrawObject(train.CurrentObjectImage);
+                wagon.DrawObject(wagon.CurrentObjectImage);
 
                 train.pathHandler.Invoke(2);
 
@@ -96,9 +101,6 @@ namespace TrainGame
                 {
                     wagon.pathHandler?.Invoke(2);
                 }
-
-                Thread.Sleep(50);
-                train.HideDrawingBackground();
 
                 train.LookForCheckpoints(switch1, switch2, wagon, game);
                 wagon.LookForCheckpoints(switch1, switch2, wagon, game);
@@ -109,12 +111,6 @@ namespace TrainGame
                 }
 
             }
-
-            switch1.DrawBlack(train._pictureBox, 315, 319);
-            switch2.DrawBlack(train._pictureBox, 462, 162);
-
-            train.DrawBlack(train.CurrentObjectImage);
-            wagon.DrawBlack(wagon.CurrentObjectImage);
         }
     }
 }

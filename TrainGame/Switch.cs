@@ -27,7 +27,7 @@ namespace TrainGame
             SwitchLeft = sL;
         }
 
-        public void DrawBlack(PictureBox _pictureBox, int x, int y)
+        public void DrawObject(PictureBox _pictureBox, int x, int y)
         {
             Graphics g = _pictureBox.CreateGraphics();
 
