@@ -50,21 +50,25 @@ namespace TrainGame
         private void button3_Click(object sender, EventArgs e)
         {
             switch1.SwitchState = "right";
+            switch1.DrawObject(train._pictureBox, 315, 319);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             switch1.SwitchState = "left";
+            switch1.DrawObject(train._pictureBox, 315, 319);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             switch2.SwitchState = "left";
+            switch2.DrawObject(train._pictureBox, 462, 162);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             switch2.SwitchState = "right";
+            switch2.DrawObject(train._pictureBox, 462, 162);
         }
 
         async public void SwitchEngineState()
