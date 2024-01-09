@@ -11,7 +11,7 @@ namespace TrainGame
 {
     public class Switch
     {
-        public string SwitchState = "left";
+        public string SwitchState = "right";
 
         public int X;
         public int Y;
