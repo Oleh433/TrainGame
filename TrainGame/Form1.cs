@@ -18,10 +18,7 @@ namespace TrainGame
 
             train = new Train(pictureBox1);
             wagon = new Wagon(pictureBox1);
-            train.HideDrawingBackground();
-            wagon.HideDrawingBackground();
 
-            train.DrawObject(train.CurrentObjectImage);
 
             switch1 = new Switch(300, 325, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Left.png"));
             switch2 = new Switch(460, 165, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch2Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch2Left.png"));
@@ -50,25 +47,29 @@ namespace TrainGame
         private void button3_Click(object sender, EventArgs e)
         {
             switch1.SwitchState = "right";
-            switch1.DrawObject(train._pictureBox, 315, 319);
+
+            DrawInteractiveObjects();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             switch1.SwitchState = "left";
-            switch1.DrawObject(train._pictureBox, 315, 319);
+
+            DrawInteractiveObjects();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             switch2.SwitchState = "left";
-            switch2.DrawObject(train._pictureBox, 462, 162);
+
+            DrawInteractiveObjects();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             switch2.SwitchState = "right";
-            switch2.DrawObject(train._pictureBox, 462, 162);
+
+            DrawInteractiveObjects();
         }
 
         async public void SwitchEngineState()
@@ -84,36 +85,33 @@ namespace TrainGame
             }
         }
 
+        public void DrawInteractiveObjects()
+        {
+            switch1.DrawObject(train._pictureBox, 315, 319);
+            switch2.DrawObject(train._pictureBox, 462, 162);
+
+            train.DrawObject(train.CurrentObjectImage);
+            wagon.DrawObject(wagon.CurrentObjectImage);
+        }
+
         public void PerformAnimation()
         {
             while (train.IsActive && game.GameState)
             {
-                
-
                 Thread.Sleep(50);
                 train.HideDrawingBackground();
 
-                switch1.DrawObject(train._pictureBox, 315, 319);
-                switch2.DrawObject(train._pictureBox, 462, 162);
-
-                train.DrawObject(train.CurrentObjectImage);
-                wagon.DrawObject(wagon.CurrentObjectImage);
+                DrawInteractiveObjects();
 
                 train.pathHandler.Invoke(2);
 
                 if (wagon.IsActive)
                 {
-                    wagon.pathHandler?.Invoke(2);
+                    wagon.pathHandler.Invoke(2);
                 }
-
+                
                 train.LookForCheckpoints(switch1, switch2, wagon, game);
-                wagon.LookForCheckpoints(switch1, switch2, wagon, game);
-
-                if (train.X == 152 && train.Y == 165)
-                {
-                    wagon.IsActive = true;
-                }
-
+                wagon.LookForCheckpoints(switch1, switch2, train, game);
             }
         }
     }

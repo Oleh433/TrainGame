@@ -16,5 +16,29 @@ namespace TrainGame.TrainParts
             pathHandler = MoveLeft;
         }
 
+        public new void LookForCheckpoints(Switch switch_1, Switch switch_2, Train train, Game game)
+        {
+            base.LookForCheckpoints(switch_1, switch_2, game);
+
+            //Train split scenario
+            if (IsActive && train.X < switch_2.X && train.Y == 165 && pathHandler == MoveLeftNDown)
+            {
+                game.LooseGame();
+            }
+            else if (IsActive && X > switch_1.X && Y == 325 && train.pathHandler == MoveRightNUp)
+            {
+                game.LooseGame();
+            }
+
+            //Wagon crash scenarios
+            else if (X == 50 && Y == 165)
+            {
+                game.LooseGame();
+            }
+            else if (X == 50 && Y == 325)
+            {
+                game.LooseGame();
+            }
+        }
     }
 }

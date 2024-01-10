@@ -21,7 +21,7 @@ namespace TrainGame.TrainParts
 
         public bool IsActive;
 
-        public PathHandler? pathHandler;
+        public PathHandler pathHandler;
 
         public PictureBox _pictureBox;
         public Graphics _graphics;
@@ -118,58 +118,59 @@ namespace TrainGame.TrainParts
             Y += step;
         }
 
-        
-
-        public void LookForCheckpoints(Switch switch_1, Switch switch_2, Wagon wagon , Game game)
+        public void LookForCheckpoints(Switch switch_1, Switch switch_2, Game game)
         {
-            if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "left" && pathHandler == MoveRight)
+            //Switch 1 scenarois
+            if (X == switch_1.X && Y == switch_1.Y)
             {
-                pathHandler = MoveRightNUp;
-                CurrentObjectImage = RotatedObjectImage;
+                if (switch_1.SwitchState == "left" && pathHandler == MoveRight)
+                {
+                    pathHandler = MoveRightNUp;
+                    CurrentObjectImage = RotatedObjectImage;
+                }
+                else if (switch_1.SwitchState == "left" && pathHandler == MoveLeftNDown)
+                {
+                    pathHandler = MoveLeft;
+                    CurrentObjectImage = ObjectImage;
+                }
+
+                //Train derail scenarios
+                else if (switch_1.SwitchState == "left" && pathHandler == MoveLeft)
+                {
+                    game.LooseGame();
+                }
+                else if (switch_1.SwitchState == "right" && pathHandler == MoveLeftNDown)
+                {
+                    game.LooseGame();
+                }
             }
 
-            else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "left" && pathHandler == MoveRightNUp)
+            //Switch 2 scenarois
+            else if (X == switch_2.X && Y == switch_2.Y)
             {
-                pathHandler = MoveRight;
-                CurrentObjectImage = ObjectImage;
-            }
-            else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "right" && pathHandler == MoveRightNUp)
-            {
-                game.LooseGame();
-            }
-            else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "right" && pathHandler == MoveRight)
-            {
-                pathHandler = MoveRight;
-            }
-            else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "left" && pathHandler == MoveRight)
-            {
-                game.LooseGame();
+                if (switch_2.SwitchState == "left" && pathHandler == MoveRightNUp)
+                {
+                    pathHandler = MoveRight;
+                    CurrentObjectImage = ObjectImage;
+                }
+                else if (switch_2.SwitchState == "left" && pathHandler == MoveLeft)
+                {
+                    pathHandler = MoveLeftNDown;
+                    CurrentObjectImage = RotatedObjectImage;
+                }
+
+                //Train derail scenarios
+                else if (switch_2.SwitchState == "right" && pathHandler == MoveRightNUp)
+                {
+                    game.LooseGame();
+                }
+                else if (switch_2.SwitchState == "left" && pathHandler == MoveRight)
+                {
+                    game.LooseGame();
+                }
             }
 
-
-            else if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "left" && pathHandler == MoveLeft)
-            {
-                game.LooseGame();
-            }
-            else if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "right" && pathHandler == MoveLeftNDown)
-            {
-                game.LooseGame();
-            }
-            else if (X == switch_1.X && Y == switch_1.Y && switch_1.SwitchState == "left" && pathHandler == MoveLeftNDown)
-            {
-                pathHandler = MoveLeft;
-                CurrentObjectImage = ObjectImage;
-            }
-
-            else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "left" && pathHandler == MoveLeft)
-            {
-                pathHandler = MoveLeftNDown;
-                CurrentObjectImage = RotatedObjectImage;
-            }
-            else if (X == switch_2.X && Y == switch_2.Y && switch_2.SwitchState == "right" && pathHandler == MoveLeft)
-            {
-                pathHandler = MoveLeft;
-            }
+            //Train crash scenarios
             else if (X == 50 && Y == 165)
             {
                 game.LooseGame();
@@ -185,10 +186,6 @@ namespace TrainGame.TrainParts
             else if (X == 760 && Y == 165)
             {
                 game.LooseGame();
-            }
-            else if (wagon.IsActive && X > 630 & X < 700 && Y == 165 && IsActive == false )
-            {
-                game.WinGame();
             }
         }
     }

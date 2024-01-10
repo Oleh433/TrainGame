@@ -70,41 +70,42 @@
             // 
             // button3
             // 
-            button3.Location = new Point(331, 368);
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(331, 373);
             button3.Name = "button3";
-            button3.Size = new Size(38, 35);
+            button3.Size = new Size(38, 38);
             button3.TabIndex = 3;
-            button3.Text = ">";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(306, 286);
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(310, 276);
             button4.Name = "button4";
-            button4.Size = new Size(38, 35);
+            button4.Size = new Size(38, 38);
             button4.TabIndex = 4;
-            button4.Text = "^";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(495, 217);
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.Location = new Point(504, 217);
             button5.Name = "button5";
-            button5.Size = new Size(41, 41);
+            button5.Size = new Size(38, 38);
             button5.TabIndex = 5;
-            button5.Text = "\\/";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
             // button6
             // 
-            button6.Location = new Point(461, 136);
+            button6.Image = (Image)resources.GetObject("button6.Image");
+            button6.Location = new Point(467, 120);
             button6.Name = "button6";
-            button6.Size = new Size(39, 38);
+            button6.Size = new Size(38, 38);
             button6.TabIndex = 6;
-            button6.Text = "<";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
