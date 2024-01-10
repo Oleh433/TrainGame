@@ -32,7 +32,7 @@ namespace TrainGame.TrainParts
             {
                 game.LooseGame();
             }
-            else if (wagon.IsActive && X > switch_1.X && Y == switch_1.Y && wagon.pathHandler == MoveRightNUp)
+            else if (wagon.IsActive && X > switch_1.X && Y == switch_1.Y && wagon.pathHandler == wagon.MoveRightNUp)
             {
                 game.LooseGame();
             }

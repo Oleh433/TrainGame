@@ -20,7 +20,7 @@ namespace TrainGame.TrainParts
         {
             base.LookForCheckpoints(switch_1, switch_2, game);
 
-            //Train split scenario
+            //Train split scenarios
             if (X < switch_2.X && Y == switch_2.Y && train.pathHandler == train.MoveLeftNDown)
             {
                 game.LooseGame();
