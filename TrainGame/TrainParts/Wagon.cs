@@ -11,7 +11,7 @@ namespace TrainGame.TrainParts
         public const string WagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Wagon.png";
         public const string RotatedWagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\RotatedWagon1.png";
 
-        public Wagon(PictureBox pictureBox) : base(pictureBox, 100, 165, Image.FromFile(WagonImagePath), Image.FromFile(RotatedWagonImagePath))
+        public Wagon(PictureBox pictureBox) : base(pictureBox, 90, 325, Image.FromFile(WagonImagePath), Image.FromFile(RotatedWagonImagePath))
         {
             pathHandler = MoveLeft;
         }
@@ -21,11 +21,11 @@ namespace TrainGame.TrainParts
             base.LookForCheckpoints(switch_1, switch_2, game);
 
             //Train split scenario
-            if (train.X < switch_2.X && train.Y == 165 && pathHandler == MoveLeftNDown)
+            if (X < switch_2.X && Y == switch_2.Y && train.pathHandler == train.MoveLeftNDown)
             {
                 game.LooseGame();
             }
-            else if (X > switch_1.X && Y == 325 && train.pathHandler == MoveRightNUp)
+            else if (X > switch_1.X && Y == switch_1.Y && train.pathHandler == train.MoveRightNUp)
             {
                 game.LooseGame();
             }

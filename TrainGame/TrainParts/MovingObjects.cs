@@ -22,7 +22,7 @@ namespace TrainGame.TrainParts
 
         public bool IsActive;
 
-        public PathHandler pathHandler;
+        public PathHandler? pathHandler;
 
         public PictureBox _pictureBox;
         public Graphics _graphics;
