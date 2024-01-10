@@ -21,21 +21,11 @@ namespace TrainGame.TrainParts
             base.LookForCheckpoints(switch_1, switch_2, game);
 
             //Train split scenario
-            if (IsActive && train.X < switch_2.X && train.Y == 165 && pathHandler == MoveLeftNDown)
+            if (train.X < switch_2.X && train.Y == 165 && pathHandler == MoveLeftNDown)
             {
                 game.LooseGame();
             }
-            else if (IsActive && X > switch_1.X && Y == 325 && train.pathHandler == MoveRightNUp)
-            {
-                game.LooseGame();
-            }
-
-            //Wagon crash scenarios
-            else if (X == 50 && Y == 165)
-            {
-                game.LooseGame();
-            }
-            else if (X == 50 && Y == 325)
+            else if (X > switch_1.X && Y == 325 && train.pathHandler == MoveRightNUp)
             {
                 game.LooseGame();
             }

@@ -112,7 +112,11 @@ namespace TrainGame
                 }
 
                 train.LookForCheckpoints(switch1, switch2, wagon, game);
-                wagon.LookForCheckpoints(switch1, switch2, train, game);
+
+                if (wagon.IsActive)
+                {
+                    wagon.LookForCheckpoints(switch1, switch2, train, game);
+                }
             }
         }
     }

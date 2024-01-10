@@ -135,7 +135,7 @@ namespace TrainGame.TrainParts
                     CurrentObjectImage = ObjectImage;
                 }
 
-                //Train derail scenarios
+                //Derail scenarios
                 else if (switch_1.SwitchState == SwichStates.Left && pathHandler == MoveLeft)
                 {
                     game.LooseGame();
@@ -160,7 +160,7 @@ namespace TrainGame.TrainParts
                     CurrentObjectImage = RotatedObjectImage;
                 }
 
-                //Train derail scenarios
+                //Derail scenarios
                 else if (switch_2.SwitchState == SwichStates.Right && pathHandler == MoveRightNUp)
                 {
                     game.LooseGame();
@@ -171,7 +171,7 @@ namespace TrainGame.TrainParts
                 }
             }
 
-            //Train crash scenarios
+            //Crash scenarios
             else if (X == 50 && Y == 165)
             {
                 game.LooseGame();
