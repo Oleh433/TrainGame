@@ -11,13 +11,19 @@ namespace TrainGame
 {
     public class Switch
     {
-        public string SwitchState = "right";
+        public SwichStates SwitchState = SwichStates.Right;
 
         public int X;
         public int Y;
 
         public Image SwitchRight;
         public Image SwitchLeft;
+
+        public enum SwichStates
+        {
+            Left,
+            Right
+        }
 
         public Switch(int x, int y, Image sR, Image sL)
         {
@@ -31,7 +37,7 @@ namespace TrainGame
         {
             Graphics g = _pictureBox.CreateGraphics();
 
-            if (SwitchState == "left")
+            if (SwitchState == SwichStates.Left)
             {
                 g.DrawImage(SwitchLeft, x, y);
             }

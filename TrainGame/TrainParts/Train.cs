@@ -37,7 +37,7 @@ namespace TrainGame.TrainParts
                 game.LooseGame();
             }
 
-            //Activate wagon scenar
+            //Activate wagon scenario
             else if (X == 152 && Y == 165)
             {
                 wagon.IsActive = true;

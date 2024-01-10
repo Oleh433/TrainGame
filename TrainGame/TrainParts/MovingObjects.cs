@@ -5,6 +5,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static TrainGame.Switch;
 
 namespace TrainGame.TrainParts
 {
@@ -123,23 +124,23 @@ namespace TrainGame.TrainParts
             //Switch 1 scenarois
             if (X == switch_1.X && Y == switch_1.Y)
             {
-                if (switch_1.SwitchState == "left" && pathHandler == MoveRight)
+                if (switch_1.SwitchState == SwichStates.Left && pathHandler == MoveRight)
                 {
                     pathHandler = MoveRightNUp;
                     CurrentObjectImage = RotatedObjectImage;
                 }
-                else if (switch_1.SwitchState == "left" && pathHandler == MoveLeftNDown)
+                else if (switch_1.SwitchState == SwichStates.Left && pathHandler == MoveLeftNDown)
                 {
                     pathHandler = MoveLeft;
                     CurrentObjectImage = ObjectImage;
                 }
 
                 //Train derail scenarios
-                else if (switch_1.SwitchState == "left" && pathHandler == MoveLeft)
+                else if (switch_1.SwitchState == SwichStates.Left && pathHandler == MoveLeft)
                 {
                     game.LooseGame();
                 }
-                else if (switch_1.SwitchState == "right" && pathHandler == MoveLeftNDown)
+                else if (switch_1.SwitchState == SwichStates.Right && pathHandler == MoveLeftNDown)
                 {
                     game.LooseGame();
                 }
@@ -148,23 +149,23 @@ namespace TrainGame.TrainParts
             //Switch 2 scenarois
             else if (X == switch_2.X && Y == switch_2.Y)
             {
-                if (switch_2.SwitchState == "left" && pathHandler == MoveRightNUp)
+                if (switch_2.SwitchState == SwichStates.Left && pathHandler == MoveRightNUp)
                 {
                     pathHandler = MoveRight;
                     CurrentObjectImage = ObjectImage;
                 }
-                else if (switch_2.SwitchState == "left" && pathHandler == MoveLeft)
+                else if (switch_2.SwitchState == SwichStates.Left && pathHandler == MoveLeft)
                 {
                     pathHandler = MoveLeftNDown;
                     CurrentObjectImage = RotatedObjectImage;
                 }
 
                 //Train derail scenarios
-                else if (switch_2.SwitchState == "right" && pathHandler == MoveRightNUp)
+                else if (switch_2.SwitchState == SwichStates.Right && pathHandler == MoveRightNUp)
                 {
                     game.LooseGame();
                 }
-                else if (switch_2.SwitchState == "left" && pathHandler == MoveRight)
+                else if (switch_2.SwitchState == SwichStates.Left && pathHandler == MoveRight)
                 {
                     game.LooseGame();
                 }

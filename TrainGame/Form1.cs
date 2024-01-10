@@ -1,4 +1,5 @@
 using TrainGame.TrainParts;
+using static TrainGame.Switch;
 
 namespace TrainGame
 {
@@ -46,28 +47,28 @@ namespace TrainGame
 
         private void button3_Click(object sender, EventArgs e)
         {
-            switch1.SwitchState = "right";
+            switch1.SwitchState = SwichStates.Right;
 
             DrawInteractiveObjects();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            switch1.SwitchState = "left";
+            switch1.SwitchState = SwichStates.Left;
 
             DrawInteractiveObjects();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            switch2.SwitchState = "left";
+            switch2.SwitchState = SwichStates.Left;
 
             DrawInteractiveObjects();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            switch2.SwitchState = "right";
+            switch2.SwitchState = SwichStates.Right;
 
             DrawInteractiveObjects();
         }
@@ -109,7 +110,7 @@ namespace TrainGame
                 {
                     wagon.pathHandler.Invoke(2);
                 }
-                
+
                 train.LookForCheckpoints(switch1, switch2, wagon, game);
                 wagon.LookForCheckpoints(switch1, switch2, train, game);
             }
