@@ -459,7 +459,7 @@
         AAAAPA5hFwAAAADwOB/CLgAAAAAAz/HLr/8/ADkjhoYFBpcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Switch1TurnRightButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAYAAAAqAaJlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAiNJREFUWEftl7/reVEYx2WS1aQkO3+C2SSLTSFFIZTBYJXRILFYxGCwyGQwKItS
@@ -474,7 +474,7 @@
         I3dWiO+UPe3+0dHnopQBK75IFvgPT2OUNCjGUuYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Switch1TurnRightButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAYAAAAqAaJlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAiNJREFUWEftl7/reVEYx2WS1aQkO3+C2SSLTSFFIZTBYJXRILFYxGCwyGQwKItS
@@ -489,7 +489,7 @@
         I3dWiO+UPe3+0dHnopQBK75IFvgPT2OUNCjGUuYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Switch1TurnLeftButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAYAAAAqAaJlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAfZJREFUWEftlk/LAUEcxzevwutwUU7KSU7KS+Am8QbkRpGTEHHgwFlJFMrBXbaU
@@ -503,7 +503,7 @@
         T8kafcS7ThbN6v1+xzUaV86sEd6U/Va+cMm9iG3ACw/JAvwA3wCZsysR46gAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Switch2TurnLeftButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAYAAAAqAaJlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAcZJREFUWEftlrGKwkAQQAOChYUgVuIvWNhrb2WvYCmWio2lIAgWtoKohdjb2+gn
@@ -517,7 +517,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Switch2TurnRightButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAAqCAYAAAAqAaJlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAc5JREFUWEftlruKwkAUhvMKdr6G+A72Xgo7Oyux8A3stBEESwsbaxEFsRJBsNFC

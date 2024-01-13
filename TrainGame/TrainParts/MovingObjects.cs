@@ -176,7 +176,7 @@ namespace TrainGame.TrainParts
             {
                 game.LooseGame();
             }
-            else if (X == 650 && Y == 325)
+            else if (X == 532 && Y == 325)
             {
                 game.LooseGame();
             }

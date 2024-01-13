@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            EngineControlButton = new Button();
+            ChangeDirectionButton = new Button();
+            Switch1TurnRightButton = new Button();
+            Switch1TurnLeftButton = new Button();
+            Switch2TurnLeftButton = new Button();
+            Switch2TurnRightButton = new Button();
+            StartGameButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,89 +49,89 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // EngineControlButton
             // 
-            button1.Location = new Point(396, 452);
-            button1.Name = "button1";
-            button1.Size = new Size(164, 56);
-            button1.TabIndex = 1;
-            button1.Text = "Engine on/of";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            EngineControlButton.Location = new Point(205, 452);
+            EngineControlButton.Name = "EngineControlButton";
+            EngineControlButton.Size = new Size(164, 56);
+            EngineControlButton.TabIndex = 1;
+            EngineControlButton.Text = "Engine on/of";
+            EngineControlButton.UseVisualStyleBackColor = true;
+            EngineControlButton.Click += EngineControlButton_Click;
             // 
-            // button2
+            // ChangeDirectionButton
             // 
-            button2.Location = new Point(205, 452);
-            button2.Name = "button2";
-            button2.Size = new Size(164, 56);
-            button2.TabIndex = 2;
-            button2.Text = "Change direction";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ChangeDirectionButton.Location = new Point(402, 452);
+            ChangeDirectionButton.Name = "ChangeDirectionButton";
+            ChangeDirectionButton.Size = new Size(164, 56);
+            ChangeDirectionButton.TabIndex = 2;
+            ChangeDirectionButton.Text = "Change direction";
+            ChangeDirectionButton.UseVisualStyleBackColor = true;
+            ChangeDirectionButton.Click += ChangeDirectionButton_Click;
             // 
-            // button3
+            // Switch1TurnRightButton
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(331, 373);
-            button3.Name = "button3";
-            button3.Size = new Size(38, 38);
-            button3.TabIndex = 3;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            Switch1TurnRightButton.BackgroundImage = (Image)resources.GetObject("Switch1TurnRightButton.BackgroundImage");
+            Switch1TurnRightButton.Image = (Image)resources.GetObject("Switch1TurnRightButton.Image");
+            Switch1TurnRightButton.Location = new Point(331, 373);
+            Switch1TurnRightButton.Name = "Switch1TurnRightButton";
+            Switch1TurnRightButton.Size = new Size(38, 38);
+            Switch1TurnRightButton.TabIndex = 3;
+            Switch1TurnRightButton.UseVisualStyleBackColor = true;
+            Switch1TurnRightButton.Click += Switch1TurnRightButton_Click;
             // 
-            // button4
+            // Switch1TurnLeftButton
             // 
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(310, 276);
-            button4.Name = "button4";
-            button4.Size = new Size(38, 38);
-            button4.TabIndex = 4;
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            Switch1TurnLeftButton.Image = (Image)resources.GetObject("Switch1TurnLeftButton.Image");
+            Switch1TurnLeftButton.Location = new Point(310, 276);
+            Switch1TurnLeftButton.Name = "Switch1TurnLeftButton";
+            Switch1TurnLeftButton.Size = new Size(38, 38);
+            Switch1TurnLeftButton.TabIndex = 4;
+            Switch1TurnLeftButton.UseVisualStyleBackColor = true;
+            Switch1TurnLeftButton.Click += Switch1TurnLeftButton_Click;
             // 
-            // button5
+            // Switch2TurnLeftButton
             // 
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(504, 217);
-            button5.Name = "button5";
-            button5.Size = new Size(38, 38);
-            button5.TabIndex = 5;
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            Switch2TurnLeftButton.Image = (Image)resources.GetObject("Switch2TurnLeftButton.Image");
+            Switch2TurnLeftButton.Location = new Point(504, 217);
+            Switch2TurnLeftButton.Name = "Switch2TurnLeftButton";
+            Switch2TurnLeftButton.Size = new Size(38, 38);
+            Switch2TurnLeftButton.TabIndex = 5;
+            Switch2TurnLeftButton.UseVisualStyleBackColor = true;
+            Switch2TurnLeftButton.Click += Switch2TurnLeftButton_Click;
             // 
-            // button6
+            // Switch2TurnRightButton
             // 
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(467, 120);
-            button6.Name = "button6";
-            button6.Size = new Size(38, 38);
-            button6.TabIndex = 6;
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            Switch2TurnRightButton.Image = (Image)resources.GetObject("Switch2TurnRightButton.Image");
+            Switch2TurnRightButton.Location = new Point(467, 120);
+            Switch2TurnRightButton.Name = "Switch2TurnRightButton";
+            Switch2TurnRightButton.Size = new Size(38, 38);
+            Switch2TurnRightButton.TabIndex = 6;
+            Switch2TurnRightButton.UseVisualStyleBackColor = true;
+            Switch2TurnRightButton.Click += Switch2TurnRightButton_Click;
             // 
-            // button7
+            // StartGameButton
             // 
-            button7.Location = new Point(12, 452);
-            button7.Name = "button7";
-            button7.Size = new Size(164, 56);
-            button7.TabIndex = 7;
-            button7.Text = "Start game";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            StartGameButton.Location = new Point(12, 452);
+            StartGameButton.Name = "StartGameButton";
+            StartGameButton.Size = new Size(164, 56);
+            StartGameButton.TabIndex = 7;
+            StartGameButton.Text = "Start game";
+            StartGameButton.UseVisualStyleBackColor = true;
+            StartGameButton.Click += StartGameButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(978, 544);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(StartGameButton);
+            Controls.Add(Switch2TurnRightButton);
+            Controls.Add(Switch2TurnLeftButton);
+            Controls.Add(Switch1TurnLeftButton);
+            Controls.Add(Switch1TurnRightButton);
+            Controls.Add(ChangeDirectionButton);
+            Controls.Add(EngineControlButton);
             Controls.Add(pictureBox1);
             MaximumSize = new Size(1000, 600);
             MinimumSize = new Size(1000, 600);
@@ -145,12 +145,12 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
+        private Button EngineControlButton;
+        private Button ChangeDirectionButton;
+        private Button Switch1TurnRightButton;
+        private Button Switch1TurnLeftButton;
+        private Button Switch2TurnLeftButton;
+        private Button Switch2TurnRightButton;
+        private Button StartGameButton;
     }
 }

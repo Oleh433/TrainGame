@@ -30,12 +30,21 @@ namespace TrainGame
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void StartGameButton_Click(object sender, EventArgs e)
+        {
+            if (game.GameState && !game.IsStarted)
+            {
+                game.IsStarted = true;
+                await Task.Run(() => PerformAnimation());
+            }
+        }
+
+        private void EngineControlButton_Click(object sender, EventArgs e)
         {
             SwitchEngineState();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ChangeDirectionButton_Click(object sender, EventArgs e)
         {
             train.ChangeMovingDirection();
 
@@ -45,32 +54,25 @@ namespace TrainGame
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Switch1TurnRightButton_Click(object sender, EventArgs e)
         {
             switch1.SwitchState = SwichStates.Right;
-
-            DrawInteractiveObjects();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Switch1TurnLeftButton_Click(object sender, EventArgs e)
         {
             switch1.SwitchState = SwichStates.Left;
-
-            DrawInteractiveObjects();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Switch2TurnLeftButton_Click(object sender, EventArgs e)
         {
             switch2.SwitchState = SwichStates.Left;
-
-            DrawInteractiveObjects();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Switch2TurnRightButton_Click(object sender, EventArgs e)
         {
             switch2.SwitchState = SwichStates.Right;
 
-            DrawInteractiveObjects();
         }
 
         public void SwitchEngineState()
@@ -99,8 +101,6 @@ namespace TrainGame
         {
             while (game.GameState)
             {
-
-                Thread.Sleep(50);
                 train.HideDrawingBackground();
 
                 DrawInteractiveObjects();
@@ -121,15 +121,8 @@ namespace TrainGame
                         wagon.pathHandler.Invoke(2);
                     }
                 }
-            }
-        }
 
-        private async void button7_Click(object sender, EventArgs e)
-        {
-            if (game.GameState && !game.IsStarted)
-            {
-                game.IsStarted = true;
-                await Task.Run(() => PerformAnimation());
+                Thread.Sleep(50);
             }
         }
     }
