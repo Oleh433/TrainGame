@@ -11,12 +11,12 @@ namespace TrainGame.TrainParts
         public const string WagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Wagon.png";
         public const string RotatedWagonImagePath = "C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\RotatedWagon1.png";
 
-        public Wagon(PictureBox pictureBox) : base(pictureBox, 100, 165, Image.FromFile(WagonImagePath), Image.FromFile(RotatedWagonImagePath))
+        public Wagon(PictureBox pictureBox, int x, int y) : base(pictureBox, x, y, Image.FromFile(WagonImagePath), Image.FromFile(RotatedWagonImagePath))
         {
             pathHandler = MoveLeft;
         }
 
-        public new void LookForCheckpoints(Switch switch_1, Switch switch_2, Train train, Game game)
+        public void LookForCheckpoints(Switch switch_1, Switch switch_2, Train train, Game game)
         {
             base.LookForCheckpoints(switch_1, switch_2, game);
 

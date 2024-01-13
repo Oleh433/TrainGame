@@ -17,8 +17,8 @@ namespace TrainGame
 
             game = new Game();
 
-            train = new Train(pictureBox1);
-            wagon = new Wagon(pictureBox1);
+            train = new Train(pictureBox1, 200, 325);
+            wagon = new Wagon(pictureBox1, 100, 325);
 
 
             switch1 = new Switch(300, 325, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Left.png"));
@@ -73,12 +73,12 @@ namespace TrainGame
             DrawInteractiveObjects();
         }
 
-        async public void SwitchEngineState()
+        public void SwitchEngineState()
         {
             if (train.IsActive == false)
             {
                 train.IsActive = true;
-                await Task.Run(() => PerformAnimation());
+
             }
             else
             {
@@ -97,19 +97,13 @@ namespace TrainGame
 
         public void PerformAnimation()
         {
-            while (train.IsActive && game.GameState)
+            while (game.GameState)
             {
+
                 Thread.Sleep(50);
                 train.HideDrawingBackground();
 
                 DrawInteractiveObjects();
-
-                train.pathHandler.Invoke(2);
-
-                if (wagon.IsActive)
-                {
-                    wagon.pathHandler.Invoke(2);
-                }
 
                 train.LookForCheckpoints(switch1, switch2, wagon, game);
 
@@ -117,6 +111,25 @@ namespace TrainGame
                 {
                     wagon.LookForCheckpoints(switch1, switch2, train, game);
                 }
+
+                if (train.IsActive)
+                {
+                    train.pathHandler.Invoke(2);
+
+                    if (wagon.IsActive)
+                    {
+                        wagon.pathHandler.Invoke(2);
+                    }
+                }
+            }
+        }
+
+        private async void button7_Click(object sender, EventArgs e)
+        {
+            if (game.GameState && !game.IsStarted)
+            {
+                game.IsStarted = true;
+                await Task.Run(() => PerformAnimation());
             }
         }
     }

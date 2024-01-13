@@ -71,7 +71,7 @@ namespace TrainGame.TrainParts
         {
             Graphics g = _pictureBox.CreateGraphics();
 
-            using (Image im = Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\roaddd1.png"))
+            using (Image im = Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\roadd1.png"))
             {
                 g.DrawImage(im, 0, 0);
             }
@@ -121,7 +121,7 @@ namespace TrainGame.TrainParts
 
         public void LookForCheckpoints(Switch switch_1, Switch switch_2, Game game)
         {
-            //Switch 1 scenarois
+            //Switch 1 scenarios
             if (X == switch_1.X && Y == switch_1.Y)
             {
                 if (switch_1.SwitchState == SwichStates.Left && pathHandler == MoveRight)
@@ -146,7 +146,7 @@ namespace TrainGame.TrainParts
                 }
             }
 
-            //Switch 2 scenarois
+            //Switch 2 scenarios
             else if (X == switch_2.X && Y == switch_2.Y)
             {
                 if (switch_2.SwitchState == SwichStates.Left && pathHandler == MoveRightNUp)
@@ -184,7 +184,7 @@ namespace TrainGame.TrainParts
             {
                 game.LooseGame();
             }
-            else if (X == 760 && Y == 165)
+            else if (X == 770 && Y == 165)
             {
                 game.LooseGame();
             }

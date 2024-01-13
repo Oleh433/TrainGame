@@ -9,6 +9,7 @@ namespace TrainGame
 {
     public class Game
     {
+        public bool IsStarted = false;
         public bool GameState = true;
 
         public void LooseGame()
