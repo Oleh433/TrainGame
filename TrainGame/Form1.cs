@@ -18,7 +18,7 @@ namespace TrainGame
             game = new Game();
 
             train = new Train(pictureBox1, 200, 325);
-            wagon = new Wagon(pictureBox1, 100, 325);
+            wagon = new Wagon(pictureBox1, 100, 165);
 
 
             switch1 = new Switch(300, 325, Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Right.png"), Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\Switch1Left.png"));
@@ -80,7 +80,6 @@ namespace TrainGame
             if (train.IsActive == false)
             {
                 train.IsActive = true;
-
             }
             else
             {
