@@ -23,11 +23,11 @@ namespace TrainGame.TrainParts
             //Train split scenarios
             if (X < switch_2.X && Y == switch_2.Y && train.pathHandler == train.MoveLeftNDown)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
             else if (X > switch_1.X && Y == switch_1.Y && train.pathHandler == train.MoveRightNUp)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
         }
     }

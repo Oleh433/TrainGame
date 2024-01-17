@@ -62,18 +62,14 @@ namespace TrainGame.TrainParts
 
         public void DrawObject(Image im)
         {
-            Graphics g = _pictureBox.CreateGraphics();
-
-            g.DrawImage(im, X, Y);
+            _graphics.DrawImage(im, X, Y);
         }
 
         public void HideDrawingBackground()
         {
-            Graphics g = _pictureBox.CreateGraphics();
-
             using (Image im = Image.FromFile("C:\\Users\\Lenovo T470p\\source\\repos\\TrainGame\\TrainGame\\Railway\\roadd1.png"))
             {
-                g.DrawImage(im, 0, 0);
+                _graphics.DrawImage(im, 0, 0);
             }
         }
         
@@ -138,11 +134,11 @@ namespace TrainGame.TrainParts
                 //Derail scenarios
                 else if (switch_1.SwitchState == SwichStates.Left && pathHandler == MoveLeft)
                 {
-                    game.LooseGame();
+                    game.LoseGame();
                 }
                 else if (switch_1.SwitchState == SwichStates.Right && pathHandler == MoveLeftNDown)
                 {
-                    game.LooseGame();
+                    game.LoseGame();
                 }
             }
 
@@ -163,30 +159,30 @@ namespace TrainGame.TrainParts
                 //Derail scenarios
                 else if (switch_2.SwitchState == SwichStates.Right && pathHandler == MoveRightNUp)
                 {
-                    game.LooseGame();
+                    game.LoseGame();
                 }
                 else if (switch_2.SwitchState == SwichStates.Left && pathHandler == MoveRight)
                 {
-                    game.LooseGame();
+                    game.LoseGame();
                 }
             }
 
             //Crash scenarios
             else if (X == 50 && Y == 165)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
             else if (X == 532 && Y == 325)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
             else if (X == 50 && Y == 325)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
             else if (X == 770 && Y == 165)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
         }
     }

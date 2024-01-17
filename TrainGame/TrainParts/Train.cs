@@ -36,11 +36,11 @@ namespace TrainGame.TrainParts
             //Train split scenarios
             else if(wagon.IsActive && X < switch_2.X && Y == switch_2.Y && wagon.pathHandler == wagon.MoveLeftNDown)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
             else if (wagon.IsActive && X > switch_1.X && Y == switch_1.Y && wagon.pathHandler == wagon.MoveRightNUp)
             {
-                game.LooseGame();
+                game.LoseGame();
             }
 
             //Activate wagon scenario

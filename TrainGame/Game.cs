@@ -12,7 +12,7 @@ namespace TrainGame
         public bool IsStarted = false;
         public bool GameState = true;
 
-        public void LooseGame()
+        public void LoseGame()
         {
             GameState = false;
             MessageBox.Show("Game Over", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
